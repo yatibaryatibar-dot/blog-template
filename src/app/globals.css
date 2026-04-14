@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 颜色系统 */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 5% 45%;
+    --primary: 240 3.8% 46.1%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 5.9% 10%;
+    --accent: 240 5% 96%;
+    --accent-foreground: 240 5.9% 10%;
+    --border: 240 5% 88%;
+    --ring: 240 5% 64.9%;
+    --radius: 0.5rem;
+    
+    /* 排版与间距 */
+    --content-width: min(100%, 46rem);
+    --container-padding: 1rem;
+    --header-height: 4rem;
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+  }
+
+  @media (min-width: 640px) { /* sm breakpoint */
+    :root {
+      --container-padding: 1.5rem;
+      --header-height: 5rem;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1 {
+    @apply scroll-m-20 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl;
+  }
+  h2 {
+    @apply scroll-m-20 border-b border-border/40 pb-2 text-xl font-bold tracking-tight first:mt-0 sm:text-2xl text-slate-700;
+  }
+  h3 {
+    @apply scroll-m-20 text-lg font-bold tracking-tight sm:text-xl text-slate-600;
+  }
+  h4 {
+    @apply scroll-m-20 text-base font-semibold tracking-tight sm:text-lg text-gray-600;
+  }
+  h5 {
+    @apply scroll-m-20 text-sm font-semibold tracking-wide sm:text-base text-gray-500 uppercase;
+  }
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+  a {
+    @apply text-primary no-underline hover:text-primary/80 transition-colors;
+  }
+  blockquote {
+    @apply mt-6 border-l-2 border-muted pl-6 italic text-muted-foreground;
+  }
+}
+
+/* 自定义组件样式 */
+@layer components {
+  .main-container {
+    width: var(--content-width);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+  
+  .nav-link {
+    @apply text-foreground/80 hover:text-foreground transition-colors font-medium relative;
+  }
+  
+  .nav-link.active {
+    @apply text-foreground font-semibold;
+  }
+  
+  .nav-link.active:after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0.5 w-full bg-foreground/80 rounded-full;
+  }
+}
+
+
+/* 强制覆盖 .prose 段落的上下边距 */
+.prose p {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* 强制覆盖 .prose 嵌套列表的上下边距 */
+.prose li > ul,
+.prose li > ol {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 
+  标题样式覆盖 - 优化设计 
+  这些样式现在通过 tailwind.config.ts 中的 typography 插件进行配置
+*/
+/*
+.prose h2 {
+    font-weight: 600 !important;
+    font-size: 1.125rem !important; // lg 
+    color: theme('colors.blue.600') !important;
+    letter-spacing: -0.01em !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    position: relative !important;
+    padding-bottom: 0.5rem !important;
+    border-bottom: 1px solid theme('colors.slate.200') !important;
+}
+
+.prose h3 {
+    font-weight: 500 !important;
+    font-size: 1rem !important; // base 
+    color: theme('colors.orange.600') !important;
+    margin-top: 2rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.prose h4 {
+    font-weight: 500 !important;
+    font-size: 1rem !important; // base 
+    color: theme('colors.slate.600') !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.prose h5 {
+    font-weight: 500 !important;
+    font-size: 0.875rem !important; // sm 
+    color: theme('colors.slate.500') !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.prose h6 {
+    font-weight: 400 !important;
+    font-size: 0.875rem !important; // sm 
+    color: theme('colors.slate.500') !important;
+    font-style: italic !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+*/
+
+/* 简洁的标题悬停效果 */
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5 {
+    transition: color 0.2s ease !important;
+}
+
+.prose h2:hover {
+    color: rgb(71 85 105) !important; /* slate-600 hover */
+}
+
+.prose h3:hover {
+    color: rgb(71 85 105) !important; /* slate-600 hover */
+}
+
+.prose h4:hover {
+    color: rgb(75 85 99) !important; /* gray-600 hover */
+}
+
+.prose h5:hover {
+    color: rgb(107 114 128) !important; /* gray-500 hover */
+}
+

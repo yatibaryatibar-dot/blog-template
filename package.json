@@ -1,9 +1,14 @@
 {
+<<<<<<< HEAD
   "name": "my-app",
+=======
+  "name": "blog-template",
+>>>>>>> origin/main
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+<<<<<<< HEAD
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -34,6 +39,45 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
+=======
+    "postids:check": "npx ts-node scripts/generate-postids.ts --check",
+    "postids:fix": "npx ts-node scripts/generate-postids.ts --fix",
+    "build": "npm run postids:check && npx ts-node scripts/generate-content-index.ts && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@next/mdx": "^15.3.2",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "gray-matter": "^4.0.3",
+    "next": "14.2.14",
+    "next-mdx-remote": "^5.0.0",
+    "pangu": "^4.0.7",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-i18next": "^15.5.1",
+    "remark-gfm": "^4.0.1",
+    "sharp": "^0.33.5",
+    "tailwind-merge": "^2.5.4",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/unist": "^3.0.3",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.14",
+    "postcss": "^8",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+>>>>>>> origin/main
     "typescript": "^5"
   }
 }

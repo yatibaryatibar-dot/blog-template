@@ -1,0 +1,21 @@
+{
+  "greeting": "你好！",
+  "navbar.home": "首页",
+  "navbar.daily": "日记",
+  "navbar.about": "关于",
+  "navbar.openMenu": "打开主菜单",
+  "navbar.closeMenu": "关闭主菜单",
+  "metadata.title": "博客模板",
+  "metadata.description": "一个由 Next.js 驱动的双语 Markdown 博客模板。",
+  "home.title": "博客模板",
+  "home.description": "一个由 Next.js 驱动的双语 Markdown 博客模板。",
+  "daily.title": "日记",
+  "daily.description": "短内容、记录和每日更新。",
+  "about.title": "关于",
+  "about.description": "关于站点或作者的介绍。",
+  "language.en": "EN",
+  "language.zh": "中文",
+  "language.switchTo.en": "切换到英文",
+  "language.switchTo.zh": "切换到中文",
+  "post.backToHome": "← 返回首页"
+} 

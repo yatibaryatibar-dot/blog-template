@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -9,6 +10,13 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+=======
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+>>>>>>> origin/main
 
 # testing
 /coverage
@@ -20,22 +28,62 @@
 # production
 /build
 
+<<<<<<< HEAD
 # misc
 .DS_Store
 *.pem
 
+=======
+>>>>>>> origin/main
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+=======
+
+# local env files
+.env*.local
+>>>>>>> origin/main
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+<<<<<<< HEAD
 next-env.d.ts
+=======
+
+# Obsidian
+.obsidian/
+.trash/
+crafts/
+
+# IDE
+.vscode/
+.idea/
+.cursor/
+.cursorignore
+
+# caches
+/.cache
+
+# system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# misc
+*.pem
+>>>>>>> origin/main
