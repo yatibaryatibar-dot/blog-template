@@ -30,9 +30,11 @@ jobs:
       - name: Generate content index
         run: tsx scripts/generate-content-index.ts
       - name: Build Next.js
-        run: npx next build
+        run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+      - name: Generate redirect files
+        run: npx tsx scripts/postbuild.ts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
